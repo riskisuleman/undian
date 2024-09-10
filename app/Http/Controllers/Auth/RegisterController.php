@@ -1,0 +1,103 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Dotenv\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
+class RegisterController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        return view('auth.register');
+    }
+
+
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        // Validate the input
+        $request->validate([
+            'name' => '',
+            'no_hp' => '',
+            'address' => '',
+            'institution_name' => '',
+            'field_of_study' => '',
+            'company' => '',
+            'last_education' => '',
+            'email' => '',
+            'password' => '',
+        ]);
+
+        
+
+        // Create the user
+        $user = User::create([
+            'name' => $request->name,
+            'no_hp' => $request->no_hp,
+            'address' => $request->address,
+            'institution_name' => $request->institution_name,
+            'field_of_study' => $request->field_of_study,
+            'company' => $request->company,
+            'last_education' => $request->last_education,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        // Authenticate the user
+        auth()->login($user);
+
+        // Redirect to the desired page
+        return redirect()->route('login')->with('success', 'Registration successful! Please login.');
+    }
+
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
+    }
+}
