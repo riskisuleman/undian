@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <section class="vh-100" style="background-color:blueviolet">
+    <section class="vh-100" style="background-color: blueviolet">
         <div class="home-center">
             <div class="home-desc-center">
                 <div class="container">
@@ -66,9 +66,9 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group position-relative">
-                                                <label>Your Email <span class="text-danger">*</span></label>
-                                                <input type="email" class="form-control" placeholder="Email"
-                                                    name="email" required>
+                                                <label>Username<span class="text-danger">*</span></label>
+                                                <input type="Username" class="form-control" placeholder="Username"
+                                                    name="Username" required>
                                             </div>
                                         </div>
 
@@ -83,21 +83,21 @@
                                         <div class="col-lg-12">
                                             <p class="float-end forgot-pass">
                                                 <a href="recovery_passward.html" class="text-dark font-weight-bold">
-                                                    Forgot password ?
+                                                   Lupa kata sandi ?
                                                 </a>
                                             </p>
                                         </div>
 
                                         <div class="col-lg-12 mb-0">
-                                            <button type="submit" class="btn btn-primary w-100" type="submit">Sign
-                                                in</button>
+                                            <button type="submit" class="btn btn-primary w-100" type="submit">Masuk
+                                                </button>
                                         </div>
 
                                         <div class="col-12 text-center">
                                             <p class="mb-0 mt-3">
-                                                <small class="text-dark me-2">Don't have an account?</small>
+                                                <small class="text-dark me-2">Tidak punya akun?</small>
                                                 <a href="{{ route('register') }}"
-                                                    class="text-dark font-weight-bold">Sign Up</a>
+                                                    class="text-dark font-weight-bold">Masuk</a>
                                             </p>
                                         </div>
                                     </div>

@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <section class="vh-100" style="background-color:blueviolet">
+    <section class="vh-100" style="background-color: blueviolet">
         <div class="home-center">
             <div class="home-desc-center">
                 <div class="container">
@@ -34,56 +34,76 @@
                         <div class="col-md-8">
                             <div class="login_page bg-white shadow rounded p-4">
                                 <div class="text-center">
-                                    <h4 class="mb-4">Sign up</h4>
+                                    <h4 class="mb-4">Register</h4>
                                 </div>
                                 <form class="login-form" action="{{ route('register') }}" method="POST">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group position-relative">
-                                                <label>Full Name <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" placeholder="Full Name"
-                                                    name="name" required>
-                                            </div>
-                                        </div>
-
-                                        
-
-                                        <div class="col-md-6">
-                                            <div class="form-group position-relative">
-                                                <label>Password <span class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" placeholder="Password"
-                                                    name="password" required>
+                                                <label>Nama Peserta<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" placeholder="Nama"
+                                                    nama="nama" required>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group position-relative">
-                                                <label>Confirm Password <span class="text-danger">*</span></label>
-                                                <input type="password" class="form-control"
-                                                    placeholder="Confirm Password" name="password_confirmation"
+                                                <label>Alamat<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" placeholder="Nama"
+                                                    nama="nama" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group position-relative">
+                                                <label>No heandphone <span class="text-danger">*</span></label>
+                                                <input type="No heandphone" class="form-control"
+                                                    placeholder="No heandphone" name="No hp" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group position-relative">
+                                                <label>No registrasi<span class="text-danger">*</span></label>
+                                                <input type="No registrasi" class="form-control"
+                                                    placeholder="No registrasi" name="password_confirmation" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group position-relative">
+                                                <label>Password<span class="text-danger">*</span></label>
+                                                <input type="password" class="form-control" placeholder="password"
+                                                    name="password_confirmation" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group position-relative">
+                                                <label>Konfirmasi Password<span class="text-danger">*</span></label>
+                                                <input type="Konfirmasi password" class="form-control"
+                                                    placeholder="Konfirmasi password" name="password_confirmation"
                                                     required>
                                             </div>
                                         </div>
-
-                                        <div class="col-md-12">
-                                            <button type="submit" class="btn btn-primary w-100">Register</button>
-                                        </div>
-
-                                        <div class="mx-auto">
-                                            <p class="mb-0 mt-3">
-                                                <small class="text-dark me-2">Already have an account?</small>
-                                                <a href="{{ route('login') }}" class="text-dark font-weight-bold">Sign
-                                                    in</a>
-                                            </p>
-                                        </div>
                                     </div>
-                                </form>
+
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                                    </div>
+
+                                    <div class="mx-auto">
+                                        <p class="mb-0 mt-3">
+                                            <small class="text-dark me-2">Sudah punya akun?</small>
+                                            <a href="{{ route('login') }}" class="text-dark font-weight-bold">Login</a>
+                                        </p>
+                                    </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 

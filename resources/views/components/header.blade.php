@@ -13,6 +13,6 @@
             </ul>
             <i class="bi bi-list mobile-nav-toggle d-none"></i>
         </nav>
-        <a class="btn-getstarted scrollto" href="index-3.html#about" style="background-color: blueviolet">Logout</a>
+        <a class="btn-getstarted scrollto" href="index-3.html#about" style="background-color:blueviolet">Logout</a>
     </div>
 </header>
