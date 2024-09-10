@@ -19,18 +19,18 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'username' => 'required',
             'password' => 'required',
         ]);
 
         $data = [
-            'email' => $request->email,
+            'username' => $request->username,
             'password' => $request->password
         ];
 
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard')->with('success', 'Login successfully!');
+            return redirect()->intended('/home')->with('success', 'Login successfully!');
         } else {
             return redirect('/login')->with('error', 'Login Failed');
         }

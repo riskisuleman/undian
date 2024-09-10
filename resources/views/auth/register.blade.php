@@ -41,46 +41,56 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group position-relative">
-                                                <label>Nama Peserta<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" placeholder="Nama"
-                                                    nama="nama" required>
+                                                <label>Nama Lengkap<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" placeholder="Masukkan Nama Lengkap"
+                                                    name="nama_lengkap" required>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group position-relative">
                                                 <label>Alamat<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" placeholder="Nama"
-                                                    nama="nama" required>
+                                                <input type="text" class="form-control" placeholder="Masukkan Alamat"
+                                                    name="alamat" required>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group position-relative">
                                                 <label>No heandphone <span class="text-danger">*</span></label>
-                                                <input type="No heandphone" class="form-control"
-                                                    placeholder="No heandphone" name="No hp" required>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Masukkan No heandphone" name="no_hp" required>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group position-relative">
                                                 <label>No registrasi<span class="text-danger">*</span></label>
-                                                <input type="No registrasi" class="form-control"
-                                                    placeholder="No registrasi" name="password_confirmation" required>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Masukkan No registrasi" name="no_registrasi" required>
                                             </div>
                                         </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group position-relative">
+                                                <label>Username<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Masukkan Username" name="username" required>
+                                            </div>
+                                        </div>
+
                                         <div class="col-md-6">
                                             <div class="form-group position-relative">
                                                 <label>Password<span class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" placeholder="password"
-                                                    name="password_confirmation" required>
+                                                <input type="password" class="form-control" placeholder="Masukkan Password"
+                                                    name="password" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+
+                                        <div class="col-md-12">
                                             <div class="form-group position-relative">
                                                 <label>Konfirmasi Password<span class="text-danger">*</span></label>
-                                                <input type="Konfirmasi password" class="form-control"
+                                                <input type="password" class="form-control"
                                                     placeholder="Konfirmasi password" name="password_confirmation"
                                                     required>
                                             </div>

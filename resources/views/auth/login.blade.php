@@ -67,8 +67,8 @@
                                         <div class="col-lg-12">
                                             <div class="form-group position-relative">
                                                 <label>Username<span class="text-danger">*</span></label>
-                                                <input type="Username" class="form-control" placeholder="Username"
-                                                    name="Username" required>
+                                                <input type="text" class="form-control" placeholder="Username"
+                                                    name="username" required>
                                             </div>
                                         </div>
 
@@ -97,7 +97,7 @@
                                             <p class="mb-0 mt-3">
                                                 <small class="text-dark me-2">Tidak punya akun?</small>
                                                 <a href="{{ route('register') }}"
-                                                    class="text-dark font-weight-bold">Masuk</a>
+                                                    class="text-dark font-weight-bold">Buat akun</a>
                                             </p>
                                         </div>
                                     </div>

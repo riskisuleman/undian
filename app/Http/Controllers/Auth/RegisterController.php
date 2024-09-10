@@ -33,40 +33,32 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the input
+        // Validasi input pengguna
         $request->validate([
-            'name' => '',
+            'username' => '',
+            // 'level' => '',
+            'nama_lengkap' => '',
+            'alamat' => '',
             'no_hp' => '',
-            'address' => '',
-            'institution_name' => '',
-            'field_of_study' => '',
-            'company' => '',
-            'last_education' => '',
-            'email' => '',
+            'no_registrasi' => '',
             'password' => '',
         ]);
 
-        
-
-        // Create the user
         $user = User::create([
-            'name' => $request->name,
+            'username' => $request->username,
+            // 'level' => $request->level,
+            'nama_lengkap' => $request->nama_lengkap,
+            'alamat' => $request->alamat,
             'no_hp' => $request->no_hp,
-            'address' => $request->address,
-            'institution_name' => $request->institution_name,
-            'field_of_study' => $request->field_of_study,
-            'company' => $request->company,
-            'last_education' => $request->last_education,
-            'email' => $request->email,
+            'no_registrasi' => $request->no_registrasi,
             'password' => Hash::make($request->password),
         ]);
 
-        // Authenticate the user
         auth()->login($user);
 
-        // Redirect to the desired page
         return redirect()->route('login')->with('success', 'Registration successful! Please login.');
     }
+
 
 
     /**
