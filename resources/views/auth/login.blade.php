@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <section class="vh-100" style="background-color: blueviolet">
+    <section class="vh-100" style="background-color: rgb(203, 197, 208)">
         <div class="home-center">
             <div class="home-desc-center">
                 <div class="container">
