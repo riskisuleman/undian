@@ -14,18 +14,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets2/css/selectize.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets2/css/nice-select.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets2/css/style.min.css') }}" />
-    {{-- <link href="{{ asset('assets2/plugins/toastr/css/toastr.min.css') }}" rel="stylesheet"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 
-    {{-- <style>
-        .alert {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1050;
-            width: 300px;
-        }
-    </style> --}}
 </head>
 
 <body>
@@ -67,17 +58,9 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-12">
-                                            <p class="float-end forgot-pass">
-                                                <a href="recovery_passward.html" class="text-dark font-weight-bold">
-                                                   Lupa kata sandi ?
-                                                </a>
-                                            </p>
-                                        </div>
-
                                         <div class="col-lg-12 mb-0">
                                             <button type="submit" class="btn btn-primary w-100" type="submit">Masuk
-                                                </button>
+                                            </button>
                                         </div>
 
                                         <div class="col-12 text-center">
@@ -104,9 +87,37 @@
     <script src="{{ asset('assets2/js/selectize.min.js') }}"></script>
     <script src="{{ asset('assets2/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('assets2/js/app.js') }}"></script>
-    {{-- <script src="{{ asset('assets2/plugins/toastr/js/toastr.min.js') }}"></script>
-    <script src="{{ asset('assets2/plugins/toastr/js/toastr.init.js') }}"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        // Toastr options (optional)
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right", // Set posisi pop-up
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000", // Waktu untuk pop-up tetap muncul
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+        @if (session('success'))
+            toastr.success('{{ session('success') }}');
+        @endif
+
+        @if (session('error'))
+            toastr.error('{{ session('error') }}');
+        @endif
+    </script>
 </body>
 
 </html>

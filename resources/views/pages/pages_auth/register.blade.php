@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets2/css/selectize.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets2/css/nice-select.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets2/css/style.min.css') }}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -42,8 +44,8 @@
                                         <div class="col-md-6">
                                             <div class="form-group position-relative">
                                                 <label>Nama Lengkap<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" placeholder="Masukkan Nama Lengkap"
-                                                    name="nama_lengkap" required>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Masukkan Nama Lengkap" name="nama_lengkap" required>
                                             </div>
                                         </div>
 
@@ -82,8 +84,8 @@
                                         <div class="col-md-6">
                                             <div class="form-group position-relative">
                                                 <label>Password<span class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" placeholder="Masukkan Password"
-                                                    name="password" required>
+                                                <input type="password" class="form-control"
+                                                    placeholder="Masukkan Password" name="password" required>
                                             </div>
                                         </div>
 
@@ -104,7 +106,8 @@
                                     <div class="mx-auto">
                                         <p class="mb-0 mt-3">
                                             <small class="text-dark me-2">Sudah punya akun?</small>
-                                            <a href="{{ route('login') }}" class="text-dark font-weight-bold">Login</a>
+                                            <a href="{{ route('login') }}"
+                                                class="text-dark font-weight-bold">Login</a>
                                         </p>
                                     </div>
                             </div>
@@ -125,6 +128,36 @@
     <script src="{{ asset('assets2/js/selectize.min.js') }}"></script>
     <script src="{{ asset('assets2/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('assets2/js/app.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        // Toastr options (optional)
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right", // Set posisi pop-up
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000", // Waktu untuk pop-up tetap muncul
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+        @if (session('success'))
+            toastr.success('{{ session('success') }}');
+        @endif
+
+        @if (session('error'))
+            toastr.error('{{ session('error') }}');
+        @endif
+    </script>
 </body>
 
 </html>

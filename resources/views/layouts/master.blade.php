@@ -24,13 +24,10 @@
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
     <link rel="{{ asset('stylesheet') }}"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-         <!-- Datatables css -->
-    <link href="{{ asset('assets4/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets4/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets4/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets4/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet') }}" type="text/css" />
-    <link href="{{ asset('assets4/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+
     <style>
         .floating {
             position: fixed;
@@ -68,24 +65,45 @@
     <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets4/js/pages/demo.datatable-init.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" />
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        // Toastr options (optional)
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right", // Set posisi pop-up
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000", // Waktu untuk pop-up tetap muncul
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
 
-     <!-- Datatables js -->
-    <script src="{{ asset('assets4/vendor/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets4/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('assets4/vendor/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('assets4/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('assets4/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') }}"></script>
-    <script src=""></script>
-    <script src="assets/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-    <script src="assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
+        @if (session('success'))
+            toastr.success('{{ session('success') }}');
+        @endif
 
-        <!-- Datatable Demo Aapp js -->
-    <script src="assets/js/pages/demo.datatable-init.js"></script>
+        @if (session('error'))
+            toastr.error('{{ session('error') }}');
+        @endif
+    </script>
 </body>
 
 </html>
