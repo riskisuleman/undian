@@ -15,7 +15,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('pages.auth.register');
+        return view('pages.pages_auth.register');
     }
 
 

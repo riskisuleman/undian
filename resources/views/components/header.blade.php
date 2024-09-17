@@ -6,7 +6,7 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto" href="{{ route('home') }}">Dashboard</a></li>
-                <li><a class="nav-link scrollto" href="index-2.html">Data Peserta</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('data_peserta.index') }}">Data Peserta</a></li>
                 <li><a class="nav-link scrollto" href="index-3.html#about">Undian</a></li>
                 <li><a class="nav-link scrollto" href="#">Pemenang Undian</a></li>
                 <li><a class="nav-link scrollto" href="index-3.html#contact">Hadiah Undian</a></li>
