@@ -8,7 +8,7 @@
                 <li><a class="nav-link scrollto" href="{{ route('home') }}">Dashboard</a></li>
                 <li><a class="nav-link scrollto" href="index-2.html">Data Peserta</a></li>
                 <li><a class="nav-link scrollto" href="index-3.html#about">Undian</a></li>
-                <li><a class="nav-link scrollto" href="{{ route('pemenang') }}">Pemenang Undian</a></li>
+                <li><a class="nav-link scrollto" href="#">Pemenang Undian</a></li>
                 <li><a class="nav-link scrollto" href="index-3.html#contact">Hadiah Undian</a></li>
                 <li><a class="nav-link scrollto" href="index-3.html#contact">Pengaturan</a></li>
             </ul>

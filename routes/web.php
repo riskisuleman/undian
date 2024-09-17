@@ -30,4 +30,3 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/pemenang', [PemenangUndianController::class, 'index'])->name('pemenang');

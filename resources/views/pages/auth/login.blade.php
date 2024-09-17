@@ -44,19 +44,6 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6">
-
-                            {{-- @if (session('success'))
-                                <script>
-                                    document.addEventListener('DOMContentLoaded', function() {
-                                        toastr.success("{{ session('success') }}", 'Success', {
-                                            closeButton: true,
-                                            positionClass: 'toast-top-right',
-                                            timeOut: 5000
-                                        });
-                                    });
-                                </script>
-                            @endif --}}
-
                             <div class="login-page bg-white shadow rounded p-4">
                                 <div class="text-center">
                                     <h4 class="mb-4">Login</h4>
@@ -102,7 +89,6 @@
                                         </div>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
                     </div>
