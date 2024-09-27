@@ -14,12 +14,7 @@ class Peserta extends Model
     protected $fillable = [
         'nama',
         'alamat',
-        'no hp',
-        'no undian',
+        'no_hp',
+        'no_undian',
     ];
-
-    public function pesertaUndian()
-    {
-        return $this->hasMany(PesertaUndian::class, 'id_peserta');
-    }
 }

@@ -12,7 +12,10 @@ class HadiahUndian extends Model
     protected $table = 'tb_hadiah_undian';
 
     protected $fillable = [
-        'kode_hadiah_undian',
+        'id_undian',
+        'id_hadiah',
+        'id_peringkat',
+        'kode_hadiah_undian'
     ];
 
     public function undian()

@@ -12,17 +12,17 @@ class Pemenang extends Model
     protected $table = 'tb_pemenang';
 
     protected $fillable = [
-        'kode_peserta_undian',
-        'kode_hadiah_undian',
+        'id_peserta',
+        'id_hadiah_undian',
     ];
 
-    public function pesertaUndian()
+    public function peserta()
     {
-        return $this->belongsTo(PesertaUndian::class, 'kode_peserta_undian', 'kode_peserta_undian');
+        return $this->belongsTo(Peserta::class, 'id_peserta');
     }
 
     public function hadiahUndian()
     {
-        return $this->belongsTo(HadiahUndian::class, 'kode_hadiah_undian', 'kode_hadiah_undian');
+        return $this->belongsTo(HadiahUndian::class, 'id_hadiah_undian');
     }
 }

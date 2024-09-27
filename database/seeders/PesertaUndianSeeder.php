@@ -14,8 +14,10 @@ class PesertaUndianSeeder extends Seeder
     public function run(): void
     {
         PesertaUndian::create([
-            'kode_peserta_undian' => 'k001',
-            'tanggal' => '2024/09/26',
+            'id_undian' => 1,
+            'id_peserta' => 1,
+            'kode_peserta_undian' => 'SK01',
+            'tanggal' => '2024-06-03',
         ]);
     }
 }

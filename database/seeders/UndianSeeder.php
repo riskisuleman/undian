@@ -15,7 +15,8 @@ class UndianSeeder extends Seeder
     {
         Undian::create([
             'nama_undian' => 'riski kondengis',
-            'kode_peserta_undian' => 'k001',
+            'tmt_undian' => '2024-05-05',
+            'tst_undian' => '2024-05-05',
         ]);
     }
 }

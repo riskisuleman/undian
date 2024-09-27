@@ -11,11 +11,11 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('tb_undian', function (Blueprint $table) {
-            $table->id();  // Primary key
-            $table->string('nama_undian');  // Gunakan snake_case
-            $table->date('tmt_undian')->nullable();  // Izinkan nilai null jika diperlukan
-            $table->date('tst_undian')->nullable();  // Izinkan nilai null jika diperlukan
-            $table->timestamps();  // Timestamps untuk created_at dan updated_at
+            $table->id();  
+            $table->string('nama_undian');  
+            $table->date('tmt_undian')->nullable();  
+            $table->date('tst_undian')->nullable();  
+            $table->timestamps();  
         });
     }
 

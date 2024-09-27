@@ -12,12 +12,7 @@ class Hadiah extends Model
     protected $table = 'tb_hadiah';
 
     protected $fillable = [
-        'hadiah',
+        'nama_hadiah',
         'url_hadiah',
     ];
-
-    public function hadiahUndian()
-    {
-        return $this->hasMany(HadiahUndian::class, 'id_hadiah');
-    }
 }

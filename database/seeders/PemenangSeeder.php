@@ -13,11 +13,8 @@ class PemenangSeeder extends Seeder
     public function run(): void
     {
         Pemenang::create([
-            'nama' => 'riski',
-            'alamat' => 'paguyaman',
-            'no_hp' => '08677761515163',
-            'no_undian' => '1234',
-            'hadiah' => 'roti coklat',
+            'id_peserta' => 1,
+            'id_hadiah_undian' => 1,
         ]);
     }
 }

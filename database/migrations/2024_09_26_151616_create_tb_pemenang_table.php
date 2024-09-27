@@ -11,13 +11,14 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('tb_pemenang', function (Blueprint $table) {
-            $table->id(); // Primary key
-            $table->unsignedBigInteger('id_peserta'); // Contoh kolom lain
-            $table->string('kode_hadiah_undian'); // Pastikan ini hanya ada satu kali
+            $table->id(); 
+            $table->unsignedBigInteger('id_peserta'); 
+            $table->unsignedBigInteger('id_hadiah_undian'); 
             $table->timestamps();
 
 
             $table->foreign('id_peserta')->references('id')->on('tb_peserta')->onDelete('cascade');
+            $table->foreign('id_hadiah_undian')->references('id')->on('tb_hadiah_undian')->onDelete('cascade');
         });
 
 

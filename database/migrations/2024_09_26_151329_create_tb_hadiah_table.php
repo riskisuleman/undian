@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('tb_hadiah', function (Blueprint $table) {
             $table->id();
-            $table->string('hadiah');
+            $table->string('nama_hadiah');
             $table->string('url_Hadiah');
             $table->timestamps();
         });

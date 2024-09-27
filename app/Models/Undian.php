@@ -17,14 +17,4 @@ class Undian extends Model
         'tst_undian'
 
     ];
-
-    public function pesertaUndian()
-    {
-        return $this->hasMany(PesertaUndian::class, 'id_undian');
-    }
-
-    public function hadiahUndian()
-    {
-        return $this->hasMany(HadiahUndian::class, 'id_undian');
-    }
 }

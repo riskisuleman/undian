@@ -14,7 +14,15 @@ class PeringkatSeeder extends Seeder
     public function run(): void
     {
         Peringkat::create([
-            'peringkat' =>'',
+            'peringkat' => '1',
+        ]);
+
+        Peringkat::create([
+            'peringkat' => '2',
+        ]);
+
+        Peringkat::create([
+            'peringkat' => '3',
         ]);
     }
 }
