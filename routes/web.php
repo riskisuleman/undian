@@ -37,7 +37,7 @@ Route::get('home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('data_peserta', DataPesertaController::class);
 Route::resource('pemenang_undian', PemenangController::class);
-Route::resource('undian', UndianController::class);
+// Route::resource('undian', UndianController::class);
 
 
 

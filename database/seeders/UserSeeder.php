@@ -17,11 +17,10 @@ class UserSeeder extends Seeder
         User::create([
             'nama_lengkap' => 'Riski Suleman',
             'username' => 'admin',
-            // 'level' => 'admin',
             'alamat' => 'Paguyaman',
             'no_hp' => '08123456789',
             'no_registrasi' => '123456789',
-            'password' => Hash::make('riski123'),
+            'password' => Hash::make('admin123'),
         ]);
     }
 }

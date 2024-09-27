@@ -5,12 +5,12 @@
         </a>
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto" href="{{ route('undian.index') }}">Undian</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('home') }}">Undian</a></li>
                 <li><a class="nav-link scrollto" href="{{ route('data_peserta.index') }}">Peserta undian</a></li>
                 <li><a class="nav-link scrollto" href="{{ route('pemenang_undian.index') }}">Pemenang Undian</a>
                 </li>
-                <li><a class="nav-link scrollto" href="index-3.html#contact">Hadiah Undian</a></li>
-                <li><a class="nav-link scrollto" href="index-3.html#contact">Pengaturan</a></li>
+                <li><a class="nav-link scrollto" href="#">Hadiah Undian</a></li>
+                <li><a class="nav-link scrollto" href="#">Pengaturan</a></li>
       
             </ul>
             <i class="bi bi-list mobile-nav-toggle d-none"></i>
