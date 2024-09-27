@@ -4,7 +4,10 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DataPesertaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PemenangController;
 use App\Http\Controllers\PemenangUndianController;
+use App\Http\Controllers\UndianController;
+use App\Models\Pemenang;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +36,9 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('data_peserta', DataPesertaController::class);
+Route::resource('pemenang_undian', PemenangController::class);
+Route::resource('undian', UndianController::class);
+
+
+
+

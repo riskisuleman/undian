@@ -3,19 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Peserta;
 
-
-class DataPesertaController extends Controller
+class UndianController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $peserta = Peserta::all();
-        return view('pages.pages_data_peserta.index', ['peserta' => $peserta]);
-        //return view('pages.pages_data_peserta.index');
+        return view('pages.pages_undian.index');
     }
 
     /**

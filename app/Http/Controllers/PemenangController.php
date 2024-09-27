@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pemenang;
 use Illuminate\Http\Request;
-use App\Models\Peserta;
 
 
-class DataPesertaController extends Controller
+class PemenangController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $peserta = Peserta::all();
-        return view('pages.pages_data_peserta.index', ['peserta' => $peserta]);
-        //return view('pages.pages_data_peserta.index');
+        $pemenang = Pemenang::all();
+        return view('pages.pages_pemenang_undian.index', ['pemenang' => $pemenang]);
     }
 
     /**

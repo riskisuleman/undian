@@ -5,16 +5,18 @@
         </a>
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto" href="{{ route('home') }}">Dashboard</a></li>
-                <li><a class="nav-link scrollto" href="{{ route('data_peserta.index') }}">Data Peserta</a></li>
-                <li><a class="nav-link scrollto" href="index-3.html#about">Undian</a></li>
-                <li><a class="nav-link scrollto" href="#">Pemenang Undian</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('undian.index') }}">Undian</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('data_peserta.index') }}">Peserta undian</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('pemenang_undian.index') }}">Pemenang Undian</a>
+                </li>
                 <li><a class="nav-link scrollto" href="index-3.html#contact">Hadiah Undian</a></li>
                 <li><a class="nav-link scrollto" href="index-3.html#contact">Pengaturan</a></li>
+      
             </ul>
             <i class="bi bi-list mobile-nav-toggle d-none"></i>
         </nav>
 
-        <a class="btn-getstarted scrollto" href="{{ route('logout') }}" style="background-color:rgb(16, 141, 204)">Logout</a>
+        <a class="btn-getstarted scrollto" href="{{ route('logout') }}"
+            style="background-color:rgb(16, 141, 204)">Logout</a>
     </div>
 </header>

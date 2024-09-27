@@ -11,45 +11,31 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-start mb-3">
-                                <a href="" class="btn btn-primary">
-                                    <i class="fas fa-plus"></i> Tambah Data Peserta
-                                </a>
                             </div>
                             <table id="example" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr class="text-center">
                                         <th>No</th>
-                                        <th>Nama Peserta</th>
+                                        <th>Nama Pemenang</th>
                                         <th>Alamat</th>
                                         <th>No Hp</th>
                                         <th>No Undian</th>
-                                        <th>Aksi</th>
+                                        <th>Hadiah</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    <tr class="text-center">
-                                        @foreach ($peserta as $p)
+                                    @foreach ($pemenang as $p)
+                                        <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $p->nama }}</td>
                                             <td>{{ $p->alamat }}</td>
                                             <td>{{ $p->no_hp }}</td>
                                             <td>{{ $p->no_undian }}</td>
-                                        @endforeach
-                                        <td>
-                                            <form action="#">
-                                                <a href="" class="btn btn-primary">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </form>
+                                            <td>{{ $p->hadiah }}</td>
 
-
-                                        </td>
-
-                                    </tr>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
