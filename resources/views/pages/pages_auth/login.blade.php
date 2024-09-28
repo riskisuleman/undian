@@ -22,7 +22,7 @@
 <body>
     <div class="background-food"></div>
 
-    <section class="vh-100 d-flex align-items-center" style="background-color: #a333ff">
+    <section class="vh-100 d-flex align-items-center" style="background-image: url {{ asset('assets/img/dindra.jpg') }}">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-md-7">
@@ -58,12 +58,12 @@
                                     style="background-color: #a333ff; color:white">Login</button>
                             </div>
 
-                            <div class="col-12 text-center">
+                            {{-- <div class="col-12 text-center">
                                 <p class="mb-0 mt-3">
                                     <small class="text-dark me-2">Don’t have an account?</small>
                                     <a href="{{ route('register') }}" class="text-dark font-weight-bold">Create one</a>
                                 </p>
-                            </div>
+                            </div> --}}
                         </form>
                     </div>
                 </div>

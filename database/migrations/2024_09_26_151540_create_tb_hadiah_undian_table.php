@@ -12,15 +12,15 @@ return new class extends Migration {
     {
         Schema::create('tb_hadiah_undian', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_undian');
-            $table->unsignedBigInteger('id_hadiah');
-            $table->unsignedBigInteger('id_peringkat');
-            $table->string('kode_hadiah_undian');
+            $table->unsignedBigInteger('undian_id');
+            $table->unsignedBigInteger('hadiah_id');
+            $table->unsignedBigInteger('peringkat_id');
+            $table->string('kd_hadiah');
             $table->timestamps();
 
-            $table->foreign('id_undian')->references('id')->on('tb_undian')->onDelete('cascade');
-            $table->foreign('id_hadiah')->references('id')->on('tb_hadiah')->onDelete('cascade');
-            $table->foreign('id_peringkat')->references('id')->on('tb_peringkat')->onDelete('cascade');
+            $table->foreign('undian_id')->references('id')->on('tb_undian')->onDelete('cascade');
+            $table->foreign('hadiah_id')->references('id')->on('tb_hadiah')->onDelete('cascade');
+            $table->foreign('peringkat_id')->references('id')->on('tb_peringkat')->onDelete('cascade');
         });
 
 

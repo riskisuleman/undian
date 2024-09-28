@@ -12,9 +12,13 @@ class Undian extends Model
     protected $table = 'tb_undian';
 
     protected $fillable = [
-        'nama_undian',
+        'user_id',
         'tmt_undian',
         'tst_undian'
-
     ];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

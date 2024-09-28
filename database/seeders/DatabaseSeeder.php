@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
             PesertaSeeder::class,
             HadiahSeeder::class,
             PeringkatSeeder::class,
-            PesertaUndianSeeder::class,
             HadiahUndianSeeder::class,
             PemenangSeeder::class
         ]);

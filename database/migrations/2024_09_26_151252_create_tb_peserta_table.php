@@ -12,11 +12,14 @@ return new class extends Migration {
     {
         Schema::create('tb_peserta', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->text('alamat');
-            $table->bigInteger('no_hp');
+            $table->unsignedBigInteger('undian_id');
+            $table->string('kd_peserta');
             $table->integer('no_undian');
+            $table->date('tanggal');
             $table->timestamps();
+
+            $table->foreign('undian_id')->references('id')->on('tb_undian')->onDelete('cascade');
+
         });
 
 

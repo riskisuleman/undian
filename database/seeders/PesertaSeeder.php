@@ -14,11 +14,10 @@ class PesertaSeeder extends Seeder
     public function run(): void
     {
         Peserta::create([
-            'nama' => 'riski',
-            'alamat' => 'paguyaman',
-            'no_hp' => '08677761515163',
-            'no_undian' => '1234',
-
+            'undian_id' => 1,
+            'kd_peserta' => 'KS01',
+            'no_undian' => '03',
+            'tanggal' => '2024-02-05',
         ]);
     }
 }

@@ -12,9 +12,14 @@ class Peserta extends Model
     protected $table = 'tb_peserta';
 
     protected $fillable = [
-        'nama',
-        'alamat',
-        'no_hp',
+        'undian_id',
+        'kd_peserta',
         'no_undian',
+        'tanggal',
     ];
+
+    public function undian()
+    {
+        return $this->belongsTo(Undian::class, 'undian_id');
+    }
 }

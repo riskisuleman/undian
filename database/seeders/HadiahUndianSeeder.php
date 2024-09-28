@@ -15,10 +15,10 @@ class HadiahUndianSeeder extends Seeder
     public function run(): void
     {
         HadiahUndian::create([
-            'id_undian' => 1,
-            'id_hadiah' => 1,
-            'id_peringkat' => 1,
-            'kode_hadiah_undian' => 'SK03',
+            'undian_id' => 1,
+            'hadiah_id' => 1,
+            'peringkat_id' => 1,
+            'kd_hadiah' => 'SK03',
         ]);
     }
 }

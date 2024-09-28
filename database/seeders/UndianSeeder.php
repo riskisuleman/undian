@@ -14,7 +14,7 @@ class UndianSeeder extends Seeder
     public function run(): void
     {
         Undian::create([
-            'nama_undian' => 'riski kondengis',
+            'user_id' => 1,
             'tmt_undian' => '2024-05-05',
             'tst_undian' => '2024-05-05',
         ]);

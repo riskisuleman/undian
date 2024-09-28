@@ -12,24 +12,24 @@ class HadiahUndian extends Model
     protected $table = 'tb_hadiah_undian';
 
     protected $fillable = [
-        'id_undian',
-        'id_hadiah',
-        'id_peringkat',
-        'kode_hadiah_undian'
+        'undian_id',
+        'hadiah_id',
+        'peringkat_id',
+        'kd_hadiah'
     ];
 
     public function undian()
     {
-        return $this->belongsTo(Undian::class, 'id_undian');
+        return $this->belongsTo(Undian::class, 'undian_id');
     }
 
     public function hadiah()
     {
-        return $this->belongsTo(Hadiah::class, 'id_hadiah');
+        return $this->belongsTo(Hadiah::class, 'hadiah_id');
     }
 
     public function peringkat()
     {
-        return $this->belongsTo(Peringkat::class, 'id_peringkat');
+        return $this->belongsTo(Peringkat::class, 'peringkat_id');
     }
 }

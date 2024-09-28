@@ -16,7 +16,5 @@ class HadiahSeeder extends Seeder
             'nama_hadiah' => '1 Unit Sepeda Motor',
             'url_Hadiah' => 'https://drive.google.com/file/d/1cQpW0XcT4sHcC0JWwZqXGkTq2JkzYqYn/view?usp=sharing'
         ]);
-
-        // Tambahkan hadiah lainnya
     }
 }

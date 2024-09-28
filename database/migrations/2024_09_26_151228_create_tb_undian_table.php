@@ -11,11 +11,13 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('tb_undian', function (Blueprint $table) {
-            $table->id();  
-            $table->string('nama_undian');  
+            $table->id();
+            $table->unsignedBigInteger('user_id'); 
             $table->date('tmt_undian')->nullable();  
             $table->date('tst_undian')->nullable();  
-            $table->timestamps();  
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
