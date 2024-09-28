@@ -20,65 +20,57 @@
 </head>
 
 <body>
-    <div id="preloader">
-        <div id="status">
-            <div class="spinner">
-                <div class="double-bounce1"></div>
-                <div class="double-bounce2"></div>
-            </div>
-        </div>
-    </div>
+    <div class="background-food"></div>
 
-    <section class="vh-100" style="background-color: rgb(203, 197, 208)">
-        <div class="home-center">
-            <div class="home-desc-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="login-page bg-white shadow rounded p-4">
-                                <div class="text-center">
-                                    <h4 class="mb-4">Login</h4>
-                                </div>
-                                <form class="login-form" method="POST" action="{{ route('login') }}">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="form-group position-relative">
-                                                <label>Username<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" placeholder="Username"
-                                                    name="username" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-12">
-                                            <div class="form-group position-relative">
-                                                <label>Password <span class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" placeholder="Password"
-                                                    name="password" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-12 mb-0">
-                                            <button type="submit" class="btn btn-primary w-100" type="submit">Masuk
-                                            </button>
-                                        </div>
-
-                                        <div class="col-12 text-center">
-                                            <p class="mb-0 mt-3">
-                                                <small class="text-dark me-2">Tidak punya akun?</small>
-                                                <a href="{{ route('register') }}"
-                                                    class="text-dark font-weight-bold">Buat akun</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+    <section class="vh-100 d-flex align-items-center" style="background-color: #a333ff">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+                    <div class="login-page bg-white shadow-lg rounded p-4"
+                        style="box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);">
+                        <div class="text-center">
+                            <span class="app-brand-text demo menu-text fw-bold ms-2 fs-6 mt-1"
+                                style="font-family: 'Poppins', sans-serif;
+                                   font-size: 12px; /* Ukuran font disesuaikan */
+                                   color: #a333ff;
+                                   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                                   letter-spacing: 1.5px;
+                                   text-transform: uppercase;">
+                                Dapoer Dindra
+                            </span>
                         </div>
+                        <form class="login-form" method="POST" action="{{ route('login') }}" style="margin-top:10px">
+                            @csrf
+                            <div class="form-group position-relative">
+                                <label for="username">Username<span class="text-danger">*</span></label>
+                                <input type="text" id="username" class="form-control"
+                                    placeholder="Enter your username" name="username" required>
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="password">Password <span class="text-danger">*</span></label>
+                                <input type="password" id="password" class="form-control"
+                                    placeholder="Enter your password" name="password" required>
+                            </div>
+
+                            <div class="col-lg-12 mb-0">
+                                <button type="submit" class="btn w-100"
+                                    style="background-color: #a333ff; color:white">Login</button>
+                            </div>
+
+                            <div class="col-12 text-center">
+                                <p class="mb-0 mt-3">
+                                    <small class="text-dark me-2">Don’t have an account?</small>
+                                    <a href="{{ route('register') }}" class="text-dark font-weight-bold">Create one</a>
+                                </p>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <script src="{{ asset('assets2/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets2/js/bootstrap.bundle.min.js') }}"></script>
@@ -89,7 +81,6 @@
     <script src="{{ asset('assets2/js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
         // Toastr options (optional)
         toastr.options = {
