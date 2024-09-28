@@ -10,11 +10,11 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4>Edit Data Peserta</h4>
+                                <h4>Tambah Data Hadiah</h4>
                             </div>
                             <form action="{{ route('data_peserta.update', $data_pesertum->id) }}" method="POST">
                                 @csrf
-                                @method('PUT') <!-- Metode PUT untuk update -->
+                                @method('PUT') 
                                 <div class="d-flex">
                                     <div class="mb-3 me-3" style="flex: 1;">
                                         <label for="kd_peserta" class="form-label">Kode Peserta</label>

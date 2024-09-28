@@ -14,5 +14,6 @@ class Hadiah extends Model
     protected $fillable = [
         'nama_hadiah',
         'url_hadiah',
+        'gambar_hadiah',
     ];
 }

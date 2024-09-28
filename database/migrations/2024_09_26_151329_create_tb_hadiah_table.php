@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('nama_hadiah');
             $table->string('url_Hadiah');
+            $table->string('gambar_Hadiah');
             $table->timestamps();
         });
 

@@ -14,7 +14,8 @@ class HadiahSeeder extends Seeder
     {
         Hadiah::create([
             'nama_hadiah' => '1 Unit Sepeda Motor',
-            'url_Hadiah' => 'https://drive.google.com/file/d/1cQpW0XcT4sHcC0JWwZqXGkTq2JkzYqYn/view?usp=sharing'
+            'url_Hadiah' => 'https://drive.google.com/file/d/1cQpW0XcT4sHcC0JWwZqXGkTq2JkzYqYn/view?usp=sharing',
+            'gambar_Hadiah' => 'motor.jpg',
         ]);
     }
 }
