@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Data Peserta')
+@section('title', 'Data Pemenang')
 
 @section('content')
     <section id="hero-static" class="hero-static d-flex align-items-center">

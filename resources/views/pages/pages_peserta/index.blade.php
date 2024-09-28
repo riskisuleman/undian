@@ -10,7 +10,8 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="d-flex justify-content-start mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Data Peserta</h4>
                                 <a href="{{ route('data_peserta.create') }}" class="btn btn-primary">
                                     <i class="fas fa-plus"></i> Tambah Data Peserta
                                 </a>
@@ -19,6 +20,7 @@
                                 <thead>
                                     <tr class="text-center">
                                         <th>No</th>
+                                        <th>Kode Peserta</th>
                                         <th>Nama Peserta</th>
                                         <th>Alamat</th>
                                         <th>No Hp</th>
@@ -28,25 +30,29 @@
                                 </thead>
 
                                 <tbody>
-                                    <tr class="text-center">
-                                        @foreach ($peserta as $p)
+                                    @foreach ($peserta as $p)
+                                        <tr class="text-center">
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $p->undian->users->nama }}</td>
-                                            <td>{{ $p->undian->users->alamat }}</td>
-                                            <td>{{ $p->undian->users->no_hp }}</td>
+                                            <td>{{ $p->kd_peserta }}</td>
+                                            <td>{{ $p->undian->user->nama }}</td>
+                                            <td>{{ $p->undian->user->alamat }}</td>
+                                            <td>{{ $p->undian->user->no_hp }}</td>
                                             <td>{{ $p->no_undian }}</td>
-                                        @endforeach
-                                        <td>
-                                            <form action="#">
-                                                <a href="" class="btn btn-primary">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                            <td>
+                                                <form action="{{ route('data_peserta.destroy', $p->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <a href="{{ route('data_peserta.edit', $p->id) }}" class="btn btn-sm btn-primary">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <button type="submit" class="btn btn-sm btn-danger"
+                                                        onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
