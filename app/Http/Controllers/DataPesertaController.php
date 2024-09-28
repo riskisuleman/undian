@@ -23,7 +23,7 @@ class DataPesertaController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.pages_peserta.create');
     }
 
     /**

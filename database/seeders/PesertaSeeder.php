@@ -16,7 +16,7 @@ class PesertaSeeder extends Seeder
         Peserta::create([
             'undian_id' => 1,
             'kd_peserta' => 'KS01',
-            'no_undian' => "03",
+            'no_undian' => "01",
             'tanggal' => '2024-02-05',
         ]);
     }

@@ -11,7 +11,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-start mb-3">
-                                <a href="" class="btn btn-primary">
+                                <a href="{{ route('data_peserta.create') }}" class="btn btn-primary">
                                     <i class="fas fa-plus"></i> Tambah Data Peserta
                                 </a>
                             </div>
