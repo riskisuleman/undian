@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Peserta;
-
+use App\Models\User;
 
 class DataPesertaController extends Controller
 {
@@ -13,9 +13,9 @@ class DataPesertaController extends Controller
      */
     public function index()
     {
+        $user = User::all();
         $peserta = Peserta::all();
-        return view('pages.pages_data_peserta.index', ['peserta' => $peserta]);
-        //return view('pages.pages_data_peserta.index');
+        return view('pages.pages_peserta.index', compact('user', 'peserta'));
     }
 
     /**

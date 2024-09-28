@@ -31,9 +31,9 @@
                                     <tr class="text-center">
                                         @foreach ($peserta as $p)
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $p->nama }}</td>
-                                            <td>{{ $p->alamat }}</td>
-                                            <td>{{ $p->no_hp }}</td>
+                                            <td>{{ $p->undian->users->nama }}</td>
+                                            <td>{{ $p->undian->users->alamat }}</td>
+                                            <td>{{ $p->undian->users->no_hp }}</td>
                                             <td>{{ $p->no_undian }}</td>
                                         @endforeach
                                         <td>
@@ -45,10 +45,7 @@
                                                     <i class="fas fa-trash"></i>
                                                 </button>
                                             </form>
-
-
                                         </td>
-
                                     </tr>
                                 </tbody>
                             </table>

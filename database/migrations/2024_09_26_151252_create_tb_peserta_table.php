@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->unsignedBigInteger('undian_id');
             $table->string('kd_peserta');
-            $table->integer('no_undian');
+            $table->string('no_undian');
             $table->date('tanggal');
             $table->timestamps();
 
