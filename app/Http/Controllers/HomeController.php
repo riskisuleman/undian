@@ -73,12 +73,11 @@ class HomeController extends Controller
         // Validasi input jika diperlukan
         $request->validate([
             'no_undian' => 'required',
-            'kd_hadiah' => 'required',
         ]);
 
         $pemenang = new Pemenang();
         $peserta = Peserta::where('no_undian', $request->no_undian)->first();
-        $hadiah = HadiahUndian::where('kd_hadiah', $request->kd_hadiah)->first();
+        $hadiah = HadiahUndian::first(); // Sesuaikan jika ingin hadiah berbeda
 
         if ($peserta && $hadiah) {
             $pemenang->id_peserta = $peserta->id;
