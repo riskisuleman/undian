@@ -22,6 +22,7 @@
                                         <th>No</th>
                                         <th>Kode Hadiah</th>
                                         <th>Nama Hadiah</th>
+                                        <th>Total Hadiah</th>
                                         <th>Gambar</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -33,15 +34,15 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $h->kd_hadiah }}</td>
                                             <td>{{ $h->hadiah->nama_hadiah }}</td>
+                                            <td>{{ $h->hadiah->total }}</td>
                                             <td>
                                                 <img src="{{ asset('uploads/gambar_hadiah/' . $h->hadiah->gambar_Hadiah) }}"
                                                     width="75px" height="75px" alt="" class="img-thumbnail">
                                             </td>
                                             <td>
-                                                <form action="#" method="POST">
-                                                    <a href="#" class="btn btn-sm btn-primary">
-                                                        <i class="fas fa-edit"></i>
-                                                    </a>
+                                                <form action="{{ route('hadiah_undian.destroy', $h->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
                                                     <button type="submit" class="btn btn-sm btn-danger"
                                                         onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                                                         <i class="fas fa-trash"></i>

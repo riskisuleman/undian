@@ -40,6 +40,12 @@ Route::resource('data_peserta', DataPesertaController::class);
 Route::resource('pemenang_undian', PemenangController::class);
 Route::resource('hadiah_undian', HadiahUndianController::class);
 
+// Rute untuk undian
+Route::get('/undian', [UndianController::class, 'index'])->name('undian.index');
+
+// Rute untuk menyimpan undian
+Route::post('/undian/simpan', [HomeController::class, 'simpanUndian'])->name('undian.simpan');
+
 
 
 

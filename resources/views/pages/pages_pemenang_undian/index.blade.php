@@ -16,6 +16,8 @@
                                 <thead>
                                     <tr class="text-center">
                                         <th>No</th>
+                                        <th>Kode Peserta</th>
+                                        <th>Kode Hadiah</th>
                                         <th>Nama Pemenang</th>
                                         <th>Alamat</th>
                                         <th>No Hp</th>
@@ -25,17 +27,16 @@
                                 </thead>
 
                                 <tbody>
-                                    @foreach ($pemenang as $p)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $p->nama }}</td>
-                                            <td>{{ $p->alamat }}</td>
-                                            <td>{{ $p->no_hp }}</td>
-                                            <td>{{ $p->no_undian }}</td>
-                                            <td>{{ $p->hadiah }}</td>
-
-                                        </tr>
-                                    @endforeach
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -43,6 +44,5 @@
                 </div>
             </div>
         </div>
-
     </section>
 @endsection

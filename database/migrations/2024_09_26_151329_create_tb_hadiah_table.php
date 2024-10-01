@@ -13,8 +13,8 @@ return new class extends Migration {
         Schema::create('tb_hadiah', function (Blueprint $table) {
             $table->id();
             $table->string('nama_hadiah');
-            $table->string('url_Hadiah');
             $table->string('gambar_Hadiah');
+            $table->string('total');
             $table->timestamps();
         });
 

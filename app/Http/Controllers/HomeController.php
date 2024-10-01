@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HadiahUndian;
+use App\Models\Pemenang;
+use App\Models\Peserta;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,8 +14,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.pages_home.index');
+        $peserta = Peserta::all();  // Ambil semua data peserta
+        $hadiah = HadiahUndian::all();  // Ambil semua data hadiah
+        return view('pages.pages_home.index', compact('hadiah', 'peserta'));  // Kirim data ke view
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -60,5 +66,28 @@ class HomeController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function simpanUndian(Request $request)
+    {
+        // Validasi input jika diperlukan
+        $request->validate([
+            'no_undian' => 'required',
+            'kd_hadiah' => 'required',
+        ]);
+
+        $pemenang = new Pemenang();
+        $peserta = Peserta::where('no_undian', $request->no_undian)->first();
+        $hadiah = HadiahUndian::where('kd_hadiah', $request->kd_hadiah)->first();
+
+        if ($peserta && $hadiah) {
+            $pemenang->id_peserta = $peserta->id;
+            $pemenang->id_hadiah_undian = $hadiah->id;
+            $pemenang->save();
+
+            return response()->json(['message' => 'Undian berhasil disimpan']);
+        }
+
+        return response()->json(['message' => 'Peserta atau hadiah tidak ditemukan'], 404);
     }
 }
