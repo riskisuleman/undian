@@ -16,8 +16,8 @@ class HomeController extends Controller
     public function index()
     {
         $peserta = Peserta::all();  // Ambil semua data peserta
-        $hadiah = Hadiah::all();     // Ambil semua data hadiah
-        return view('pages.pages_home.index', compact('hadiah', 'peserta')); // Kirim data ke view
+        $hadiah_undian = Hadiah::all();     // Ambil semua data hadiah
+        return view('pages.pages_home.index', compact('hadiah_undian', 'peserta')); // Kirim data ke view
     }
 
 

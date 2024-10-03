@@ -8,14 +8,16 @@
             data-aos="zoom-out">
             <div class="row">
                 <div class="col-md-4 mt-4 pt-2">
-                    <!-- Single card to display one random image -->
+                    <!-- Kartu untuk menampilkan satu gambar acak -->
                     <div id="hadiah-card" class="how-it-work-box bg-light p-4 text-center rounded shadow"
                         style="background-size: cover; background-position: center; height: 300px;">
-                        <img id="gambar-hadiah" src="{{ asset('uploads/gambar_hadiah/' . $hadiah->first()->gambar_hadiah) }}"
+                        <img id="gambar-hadiah" src="{{ asset('uploads/gambar_hadiah/' . $hadiah_undian->first()->gambar_hadiah) }}"
                             alt="Hadiah" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                     </div>
-                    <p id="nama-hadiah">Nama Hadiah</p> <!-- Nama hadiah akan diganti secara dinamis -->
+                    <p id="nama-hadiah">{{ $hadiah_undian->first()->nama_hadiah ?? 'Nama Hadiah' }}</p>
+                    <!-- Nama hadiah akan diganti secara dinamis -->
                 </div>
+
 
                 <!-- No Undian dan Tombol (tengah) -->
                 <div class="col-md-4 mt-4 pt-2">
@@ -48,7 +50,7 @@
     </section>
     <script>
         let pesertaData = @json($peserta);
-        let hadiahData = @json($hadiah);
+        let hadiahData = @json($hadiah_undian); 
         let undianInterval;
         let hadiahInterval;
         let pesertaTerpilih = [];
@@ -128,17 +130,26 @@
             let randomIndex = Math.floor(Math.random() * hadiahData.length);
             let hadiah = hadiahData[randomIndex];
 
-            // Debugging untuk melihat path gambar
-            console.log(`Path gambar: /uploads/gambar_hadiah/${hadiah.gambar_hadiah}`);
+            // Debugging: Tampilkan URL gambar
+            const gambarUrl = `/uploads/gambar_hadiah/${hadiah.gambar_hadiah}`;
+            console.log(`Mengatur gambar ke: ${gambarUrl}`); // Log URL gambar
 
             // Mengubah src dari img tag
             let hadiahImageElement = document.getElementById('gambar-hadiah');
-            hadiahImageElement.src = `/uploads/gambar_hadiah/${hadiah.gambar_hadiah}`;
+            hadiahImageElement.src = gambarUrl; // Set gambar URL
             document.getElementById('nama-hadiah').innerText = hadiah.nama_hadiah;
 
             // Debugging untuk memastikan elemen gambar sudah diubah
             hadiahImageElement.onerror = function() {
-                console.error(`Gambar tidak ditemukan: /uploads/gambar_hadiah/${hadiah.gambar_hadiah}`);
+                console.error(`Gambar tidak ditemukan: ${gambarUrl}`);
+                hadiahImageElement.src = '/path/to/default/image.png'; // Ganti dengan gambar default
+                document.getElementById('nama-hadiah').innerText =
+                    "Gambar tidak ditemukan "; // Pesan jika gambar tidak ada
+            };
+
+            // Jika gambar berhasil dimuat, log pesan
+            hadiahImageElement.onload = function() {
+                console.log(`Gambar berhasil dimuat: ${gambarUrl}`);
             };
         }
 
