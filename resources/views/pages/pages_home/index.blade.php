@@ -20,11 +20,14 @@
                     <div class="tombol-container">
                         <button id="start-btn" class="btn mb-4"
                             style="background-color: #a333ff; color:white">Start</button>
-                        <button id="stop-btn" class="btn mb-4" style="background-color: #a333ff; color:white"
-                            disabled>Stop</button>
+                        <button id="stop-btn" class="btn mb-4" style="background-color: #a333ff; color:white" disabled>Stop
+                        </button>
+                        <button id="simpan-btn" class="btn mb-4" style="background-color: #a333ff; color:white"
+                            disabled>Simpan
+                        </button>
                     </div>
-                    <button id="simpan-btn" class="btn mb-4" style="background-color: #a333ff; color:white"
-                        disabled>Simpan</button>
+                    <button id="refresh-btn" class="btn" style="background-color: #ff3333; color:white"
+                        disabled>Refresh</button>
                 </div>
 
                 <!-- List Peserta Terpilih (sebelah kanan) -->
@@ -40,28 +43,36 @@
             </div>
         </div>
     </section>
-
     <script>
         let pesertaData = @json($peserta);
+        let hadiahData = @json($hadiah);
         let undianInterval;
+        let hadiahInterval;
         let pesertaTerpilih = [];
 
+        // Tombol Start
         document.getElementById('start-btn').addEventListener('click', function() {
             undianInterval = setInterval(pickRandomPeserta, 100);
+            hadiahInterval = setInterval(pickRandomHadiah, 100);
             document.getElementById('start-btn').disabled = true;
             document.getElementById('stop-btn').disabled = false;
+            document.getElementById('refresh-btn').disabled = true;
         });
 
+        // Tombol Stop
         document.getElementById('stop-btn').addEventListener('click', function() {
             clearInterval(undianInterval);
+            clearInterval(hadiahInterval);
             document.getElementById('stop-btn').disabled = true;
             document.getElementById('simpan-btn').disabled = false;
         });
 
+        // Tombol Simpan
         document.getElementById('simpan-btn').addEventListener('click', function() {
             const selectedPeserta = document.getElementById('no-undian').innerText;
             pesertaTerpilih.push(selectedPeserta);
 
+            // Update tampilan peserta terpilih
             let pesertaTerpilihList = document.getElementById('peserta-terpilih');
             let listItem = document.createElement('li');
             listItem.classList.add('list-group-item');
@@ -78,37 +89,33 @@
                     body: JSON.stringify({
                         no_undian: selectedPeserta,
                     })
-                }).then(response => response.json())
+                })
+                .then(response => response.json())
                 .then(data => {
                     alert('Undian berhasil disimpan!');
+                    document.getElementById('simpan-btn').disabled = true;
+                    document.getElementById('start-btn').disabled = false; // Reset setelah simpan
+                    document.getElementById('refresh-btn').disabled = false; // Aktifkan tombol refresh
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Gagal menyimpan undian!');
                 });
         });
-    </script>
-    <script>
+
+        // Tombol Refresh
+        document.getElementById('refresh-btn').addEventListener('click', function() {
+            resetUndian();
+        });
+
+        // Pilih Peserta Acak
         function pickRandomPeserta() {
             let randomIndex = Math.floor(Math.random() * pesertaData.length);
             let peserta = pesertaData[randomIndex];
-
             document.getElementById('no-undian').innerText = peserta.no_undian;
         }
 
-        let hadiahData = @json($hadiah);
-        let hadiahInterval;
-
-        document.getElementById('start-btn').addEventListener('click', function() {
-            hadiahInterval = setInterval(pickRandomHadiah, 100);
-            undianInterval = setInterval(pickRandomPeserta, 100);
-            document.getElementById('start-btn').disabled = true;
-            document.getElementById('stop-btn').disabled = false;
-        });
-
-        document.getElementById('stop-btn').addEventListener('click', function() {
-            clearInterval(hadiahInterval);
-            clearInterval(undianInterval);
-            document.getElementById('stop-btn').disabled = true;
-            document.getElementById('simpan-btn').disabled = false;
-        });
-
+        // Pilih Hadiah Acak
         function pickRandomHadiah() {
             let randomIndex = Math.floor(Math.random() * hadiahData.length);
             let hadiah = hadiahData[randomIndex];
@@ -118,6 +125,17 @@
             hadiahImageElement.style.backgroundImage = `url('/uploads/gambar_hadiah/${hadiah.gambar_hadiah}')`;
             hadiahImageElement.style.backgroundSize = 'cover';
             hadiahImageElement.style.backgroundPosition = 'center';
+        }
+
+        // Fungsi Reset
+        function resetUndian() {
+            document.getElementById('no-undian').innerText = "00000"; // Reset nomor undian
+            document.getElementById('start-btn').disabled = false; // Aktifkan kembali tombol start
+            document.getElementById('stop-btn').disabled = true; // Nonaktifkan tombol stop
+            document.getElementById('simpan-btn').disabled = true; // Nonaktifkan tombol simpan
+            document.getElementById('refresh-btn').disabled = true; // Nonaktifkan tombol refresh
+            pesertaTerpilih = []; // Kosongkan peserta terpilih
+            document.getElementById('peserta-terpilih').innerHTML = ""; // Kosongkan tampilan peserta terpilih
         }
     </script>
 @endsection

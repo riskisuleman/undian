@@ -70,14 +70,14 @@ class HomeController extends Controller
 
     public function simpanUndian(Request $request)
     {
-        // Validasi input jika diperlukan
+        // Validasi input
         $request->validate([
             'no_undian' => 'required',
         ]);
 
         $pemenang = new Pemenang();
         $peserta = Peserta::where('no_undian', $request->no_undian)->first();
-        $hadiah = HadiahUndian::first(); // Sesuaikan jika ingin hadiah berbeda
+        $hadiah = HadiahUndian::first(); // Sesuaikan jika ingin hadiah berbeda setiap undian
 
         if ($peserta && $hadiah) {
             $pemenang->id_peserta = $peserta->id;
