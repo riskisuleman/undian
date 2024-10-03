@@ -15,11 +15,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $peserta = Peserta::all();  // Ambil semua data peserta
-        $hadiah_undian = Hadiah::all();     // Ambil semua data hadiah
-        return view('pages.pages_home.index', compact('hadiah_undian', 'peserta')); // Kirim data ke view
+        $peserta = Peserta::all();  
+        $hadiah_undian = Hadiah::all();  
+        return view('pages.pages_home.index', compact('hadiah_undian', 'peserta')); 
     }
-
 
     /**
      * Show the form for creating a new resource.
