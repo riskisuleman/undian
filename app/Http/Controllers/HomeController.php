@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hadiah;
 use App\Models\HadiahUndian;
 use App\Models\Pemenang;
 use App\Models\Peserta;
@@ -15,8 +16,8 @@ class HomeController extends Controller
     public function index()
     {
         $peserta = Peserta::all();  // Ambil semua data peserta
-        $hadiah = HadiahUndian::all();  // Ambil semua data hadiah
-        return view('pages.pages_home.index', compact('hadiah', 'peserta'));  // Kirim data ke view
+        $hadiah = Hadiah::all();     // Ambil semua data hadiah
+        return view('pages.pages_home.index', compact('hadiah', 'peserta')); // Kirim data ke view
     }
 
 

@@ -7,11 +7,14 @@
         <div class="container d-flex flex-column justify-content-center p-3 text-center position-relative"
             data-aos="zoom-out">
             <div class="row">
-                <!-- Gambar Hadiah (sebelah kiri) -->
                 <div class="col-md-4 mt-4 pt-2">
-                    <div id="hadiah-image" class="how-it-work-box bg-light p-4 text-center rounded shadow"
-                        style="background-image: url('{{ asset('uploads/gambar_hadiah/' . $hadiah[0]->gambar) }}'); background-size: cover; background-position: center; height: 300px;">
+                    <!-- Single card to display one random image -->
+                    <div id="hadiah-card" class="how-it-work-box bg-light p-4 text-center rounded shadow"
+                        style="background-size: cover; background-position: center; height: 300px;">
+                        <img id="gambar-hadiah" src="{{ asset('uploads/gambar_hadiah/' . $hadiah->first()->gambar_hadiah) }}"
+                            alt="Hadiah" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                     </div>
+                    <p id="nama-hadiah">Nama Hadiah</p> <!-- Nama hadiah akan diganti secara dinamis -->
                 </div>
 
                 <!-- No Undian dan Tombol (tengah) -->
@@ -70,6 +73,10 @@
         // Tombol Simpan
         document.getElementById('simpan-btn').addEventListener('click', function() {
             const selectedPeserta = document.getElementById('no-undian').innerText;
+            const hadiahImageElement = document.getElementById('gambar-hadiah')
+                .src; // Ubah untuk mengambil src dari elemen img
+            const hadiahGambar = hadiahImageElement.split('/').pop(); // Ambil nama file gambar dari src
+
             pesertaTerpilih.push(selectedPeserta);
 
             // Update tampilan peserta terpilih
@@ -88,6 +95,7 @@
                     },
                     body: JSON.stringify({
                         no_undian: selectedPeserta,
+                        hadiah_gambar: hadiahGambar, // Kirim gambar hadiah yang dipilih
                     })
                 })
                 .then(response => response.json())
@@ -120,11 +128,18 @@
             let randomIndex = Math.floor(Math.random() * hadiahData.length);
             let hadiah = hadiahData[randomIndex];
 
-            // Mengganti background-image dari elemen <div>
-            let hadiahImageElement = document.getElementById('hadiah-image');
-            hadiahImageElement.style.backgroundImage = `url('/uploads/gambar_hadiah/${hadiah.gambar_hadiah}')`;
-            hadiahImageElement.style.backgroundSize = 'cover';
-            hadiahImageElement.style.backgroundPosition = 'center';
+            // Debugging untuk melihat path gambar
+            console.log(`Path gambar: /uploads/gambar_hadiah/${hadiah.gambar_hadiah}`);
+
+            // Mengubah src dari img tag
+            let hadiahImageElement = document.getElementById('gambar-hadiah');
+            hadiahImageElement.src = `/uploads/gambar_hadiah/${hadiah.gambar_hadiah}`;
+            document.getElementById('nama-hadiah').innerText = hadiah.nama_hadiah;
+
+            // Debugging untuk memastikan elemen gambar sudah diubah
+            hadiahImageElement.onerror = function() {
+                console.error(`Gambar tidak ditemukan: /uploads/gambar_hadiah/${hadiah.gambar_hadiah}`);
+            };
         }
 
         // Fungsi Reset
