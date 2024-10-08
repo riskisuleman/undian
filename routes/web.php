@@ -6,7 +6,6 @@ use App\Http\Controllers\DataPesertaController;
 use App\Http\Controllers\HadiahUndianController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PemenangController;
-use App\Http\Controllers\PemenangUndianController;
 use App\Http\Controllers\UndianController;
 use Illuminate\Support\Facades\Route;
 

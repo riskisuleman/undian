@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('nama');
             $table->text('alamat');
-            $table->bigInteger('no_hp');
+            $table->string('no_hp');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
